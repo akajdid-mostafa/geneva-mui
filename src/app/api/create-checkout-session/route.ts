@@ -1,8 +1,18 @@
-// If you haven't already, install the Stripe package with: npm install stripe
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '');
+let stripe: Stripe | null = null;
+
+function getStripe(): Stripe {
+	const key = process.env.STRIPE_SECRET_KEY;
+	if (!key) {
+		throw new Error('STRIPE_SECRET_KEY is not configured');
+	}
+	if (!stripe) {
+		stripe = new Stripe(key);
+	}
+	return stripe;
+}
 
 export async function POST(req: NextRequest) {
 	try {
@@ -11,7 +21,7 @@ export async function POST(req: NextRequest) {
 			return NextResponse.json({ error: 'Missing priceId' }, { status: 400 });
 		}
 
-		const session = await stripe.checkout.sessions.create({
+		const session = await getStripe().checkout.sessions.create({
 			payment_method_types: ['card'],
 			mode: 'subscription',
 			line_items: [
