@@ -16,6 +16,17 @@ function getStripe(): Stripe {
 
 export async function POST(req: NextRequest) {
 	try {
+		if (!process.env.STRIPE_SECRET_KEY) {
+			return NextResponse.json(
+				{
+					error:
+						'Checkout is not configured yet. Add STRIPE_SECRET_KEY in your environment when you are ready to accept payments.',
+					code: 'STRIPE_NOT_CONFIGURED',
+				},
+				{ status: 503 },
+			);
+		}
+
 		const { priceId } = await req.json();
 		if (!priceId) {
 			return NextResponse.json({ error: 'Missing priceId' }, { status: 400 });

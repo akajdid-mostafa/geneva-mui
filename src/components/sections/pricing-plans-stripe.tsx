@@ -202,6 +202,14 @@ function PricingPlanCard({
 			setLoading(false);
 			return;
 		}
+		const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+		if (!publishableKey) {
+			setError(
+				'Payments are not set up yet. Add NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY and STRIPE_SECRET_KEY to enable checkout.',
+			);
+			setLoading(false);
+			return;
+		}
 		try {
 			const res = await fetch('/api/create-checkout-session', {
 				method: 'POST',
@@ -211,9 +219,7 @@ function PricingPlanCard({
 			const data = await res.json();
 			if (!res.ok)
 				throw new Error(data.error || 'Failed to create checkout session');
-			const stripe = await loadStripe(
-				process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
-			);
+			const stripe = await loadStripe(publishableKey);
 			if (!stripe) throw new Error('Stripe failed to load');
 			await stripe.redirectToCheckout({ sessionId: data.sessionId });
 		} catch (err: unknown) {
