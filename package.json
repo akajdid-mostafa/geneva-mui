@@ -1,0 +1,43 @@
+{
+  "name": "geneva-mui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.2.0",
+    "@mui/material-nextjs": "^7.2.0",
+    "@stripe/stripe-js": "^7.4.0",
+    "@tabler/icons-react": "^3.34.0",
+    "@tanstack/react-query": "^5.82.0",
+    "embla-carousel-react": "^8.6.0",
+    "motion": "^12.23.0",
+    "next": "15.3.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
+    "react-player": "^3.1.0",
+    "resend": "^4.6.0",
+    "stripe": "^18.3.0",
+    "tailwind-merge": "^3.3.1",
+    "use-count-up": "^3.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

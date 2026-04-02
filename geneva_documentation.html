@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geneva — Modern SaaS Landing Page Template</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header .tagline {
+            font-size: 1.25rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+        
+        .header .description {
+            font-size: 1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 32px 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin: 24px 0 12px 0;
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4b5563;
+            margin: 20px 0 8px 0;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .feature-item {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #4f46e5;
+        }
+        
+        .feature-item strong {
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        .tech-stack {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+        
+        .tech-item {
+            display: inline-block;
+            background: white;
+            padding: 8px 16px;
+            margin: 4px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #1e40af;
+            border: 1px solid #dbeafe;
+        }
+        
+        .code-block {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin: 16px 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        
+        .inline-code {
+            background: #f3f4f6;
+            color: #dc2626;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+        
+        .highlight-box strong {
+            color: #92400e;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+            margin: 40px 0;
+        }
+        
+        .footer {
+            background: #f8fafc;
+            padding: 32px 40px;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .footer p {
+            margin-bottom: 8px;
+            color: #6b7280;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .contact-info strong {
+            color: #166534;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .code-block {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Geneva — Modern SaaS Landing Page Template</h1>
+            <div class="tagline">🚀 Launch your SaaS in minutes, not months!</div>
+            <div class="description">
+                Transform your vision into a stunning, high-converting landing page with Geneva — the premium SaaS template that combines the power of Next.js, Material-UI, and Tailwind CSS. Built for entrepreneurs who refuse to compromise on design or performance.
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="highlight-box">
+                <strong>✨ <a href="https://geneva.themefellas.com/">View Live Demo →</a></strong><br>
+                <strong>Stop building from scratch. Start converting customers today.</strong>
+            </div>
+            
+            <h2>🚀 Why Choose Geneva?</h2>
+            <p><strong>⚡ Ship faster.</strong> While your competitors spend months building from scratch, you'll be collecting customer feedback and revenue.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>🎨 Conversion-Optimized Design:</strong> Every pixel crafted to turn visitors into customers
+                </div>
+                <div class="feature-item">
+                    <strong>📱 Mobile-First Responsive:</strong> Flawless experience across all devices and screen sizes
+                </div>
+                <div class="feature-item">
+                    <strong>🚀 Lightning Fast:</strong> Built with Next.js 15 — your users will feel the speed
+                </div>
+                <div class="feature-item">
+                    <strong>✨ Smooth Animations:</strong> Engage users with Motion-powered reveals and transitions
+                </div>
+                <div class="feature-item">
+                    <strong>💳 Revenue-Ready:</strong> Stripe integration means you can start charging from day one
+                </div>
+                <div class="feature-item">
+                    <strong>📧 Lead Capture:</strong> Built-in email integration to grow your subscriber base
+                </div>
+                <div class="feature-item">
+                    <strong>🔧 Developer-Friendly:</strong> Fully typed TypeScript for maintainable, scalable code
+                </div>
+                <div class="feature-item">
+                    <strong>🔍 SEO Optimized:</strong> Rank higher and get discovered by your ideal customers
+                </div>
+            </div>
+            
+            <h2>🎨 Included Sections</h2>
+            
+            <h3>Landing Page Components</h3>
+            <ul>
+                <li><strong>Hero Section:</strong> Eye-catching headline with call-to-action buttons</li>
+                <li><strong>Partners/Logos:</strong> Showcase trusted brands and partnerships</li>
+                <li><strong>Features Grid:</strong> Highlight key product features with visuals</li>
+                <li><strong>Video Section:</strong> Product demo or explainer video</li>
+                <li><strong>Features Slider:</strong> Interactive feature showcase</li>
+                <li><strong>Large Feature:</strong> Detailed feature spotlight</li>
+                <li><strong>Features Accordion:</strong> Expandable feature descriptions</li>
+                <li><strong>Process:</strong> Step-by-step workflow visualization</li>
+                <li><strong>Reviews:</strong> Customer review showcase</li>
+                <li><strong>Features List:</strong> Comprehensive feature listing</li>
+                <li><strong>Testimonials:</strong> Customer success stories</li>
+                <li><strong>Stats:</strong> Key metrics and achievements</li>
+                <li><strong>Pricing Plans:</strong> Stripe-integrated subscription plans</li>
+                <li><strong>FAQ:</strong> Frequently asked questions</li>
+            </ul>
+            
+            <h3>Additional Pages</h3>
+            <ul>
+                <li><strong>About:</strong> Company information and team</li>
+                <li><strong>Contact:</strong> Contact form with email integration</li>
+                <li><strong>Terms of Service:</strong> Legal terms page</li>
+                <li><strong>Privacy Policy:</strong> Privacy policy page</li>
+                <li><strong>Cookies:</strong> Cookie policy page</li>
+            </ul>
+            
+            <h2>🛠 Tech Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">Next.js 15</div>
+                <div class="tech-item">Material-UI v7</div>
+                <div class="tech-item">Tailwind CSS v4</div>
+                <div class="tech-item">Motion</div>
+                <div class="tech-item">Tabler Icons</div>
+                <div class="tech-item">Stripe</div>
+                <div class="tech-item">Resend</div>
+                <div class="tech-item">Mona Sans</div>
+                <div class="tech-item">React Query</div>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>Why MUI + Tailwind?</strong> We use Tailwind for layout/utility classes and MUI for components and theming. This gives you the best of both worlds: rapid prototyping with utilities and consistent, accessible components out of the box.
+            </div>
+            
+            <h2>📦 Getting Started</h2>
+            <p><strong>From zero to hero in under 5 minutes.</strong> Let's get your SaaS landing page live.</p>
+            
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>Node.js 18+ installed</li>
+                <li>npm, yarn, pnpm, or bun package manager</li>
+            </ul>
+            
+            <h3>Installation</h3>
+            <ol>
+                <li><strong>Clone or download</strong> the template</li>
+                <li><strong>Install dependencies:</strong></li>
+            </ol>
+            
+            <div class="code-block">npm install
+# or
+yarn install
+# or
+pnpm install</div>
+            
+            <ol start="3">
+                <li><strong>Set up environment variables:</strong><br>
+                Create a <span class="inline-code">.env.local</span> file in the root directory:</li>
+            </ol>
+            
+            <div class="code-block"># Stripe Configuration
+STRIPE_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+
+# Email Configuration (optional)
+RESEND_API_KEY=re_...</div>
+            
+            <ol start="4">
+                <li><strong>Run the development server:</strong></li>
+            </ol>
+            
+            <div class="code-block">npm run dev
+# or
+yarn dev
+# or
+pnpm dev</div>
+            
+            <ol start="5">
+                <li><strong>Open</strong> <a href="http://localhost:3000">http://localhost:3000</a> in your browser</li>
+            </ol>
+            
+            <h2>✏️ Customization Guide</h2>
+            <p><strong>Make it yours in minutes.</strong> Geneva is designed for non-technical founders and experienced developers alike.</p>
+            
+            <h3>🎯 Quick Content Updates</h3>
+            
+            <h4>Hero Section</h4>
+            <p>Edit the hero content in <span class="inline-code">src/components/sections/hero.tsx</span>:</p>
+            
+            <div class="code-block">// Put Section Headline here
+const headline = `Your Entire eCommerce`;
+
+// Put Section SubHeadline here
+const subHeadline = `Business in One Dashboard`;
+
+// Put Section TrustedBy here
+const trustedBy = `Trusted by +300K Creatives`;
+
+// Put Video url here
+const videoUrl = 'https://www.youtube.com/watch?v=LXb3EKWsInQ';</div>
+            
+            <h4>Features Grid</h4>
+            <p>Update features in <span class="inline-code">src/components/sections/features-grid.tsx</span>:</p>
+            
+            <div class="code-block">const features: Feature[] = [
+    {
+        headline: 'Smart Product Management',
+        description:
+            'Add, update, and categorize products effortlessly. Bulk actions, variants, and inventory tracking made simple.',
+    },
+    // Add more features...
+];</div>
+            
+            <h4>Pricing Plans</h4>
+            <p>Modify pricing in <span class="inline-code">src/components/sections/pricing-plans-stripe.tsx</span>:</p>
+            
+            <div class="code-block">const pricingPlans: PricingPlan[] = [
+    {
+        title: 'Beginner',
+        monthlyPrice: 9.99,
+        yearlyPrice: 99.99,
+        includedFeatures: [
+            `AI-Powered Financial Insights`,
+            `Seamless Multi-Account Management`,
+            // Add your features...
+        ],
+        stripePriceIdMonthly: 'price_your_stripe_price_id',
+        stripePriceIdYearly: 'price_your_stripe_price_id',
+    },
+    // Add more plans...
+];</div>
+            
+            <div class="section-divider"></div>
+            
+            <h3>🎨 Design Customization</h3>
+            
+            <h4>Colors and Theme</h4>
+            <p>Customize the theme in <span class="inline-code">src/theme.ts</span>:</p>
+            
+            <div class="code-block">// Update brand colors, typography, and component styles
+const theme = createTheme({
+    palette: {
+        // Your custom color palette
+    },
+});</div>
+            
+            <h4>Images</h4>
+            <p>Replace images in the <span class="inline-code">public/</span> directory:</p>
+            <ul>
+                <li><span class="inline-code">public/light/</span> - Light theme images</li>
+                <li><span class="inline-code">public/dark/</span> - Dark theme images</li>
+                <li><span class="inline-code">public/global/</span> - Theme-independent images</li>
+            </ul>
+            
+            <h3>🎭 Animation Customization</h3>
+            <p><strong>Every section comes alive with smooth animations.</strong> The <span class="inline-code">RevealSection</span> component is your secret weapon for engaging user experiences.</p>
+            
+            <div class="code-block">// From src/components/sections/hero.tsx
+&lt;RevealSection delay={0.1}&gt;
+  &lt;Typography variant="h1"&gt;
+    {headline}{' '}
+    &lt;Typography color="accent.main" component={'span'} variant="h1"&gt;
+      {subHeadline}
+    &lt;/Typography&gt;
+  &lt;/Typography&gt;
+&lt;/RevealSection&gt;
+
+&lt;RevealSection delay={0.3}&gt;
+  &lt;Stack direction={{ xs: 'column', sm: 'row' }} spacing={2.5}&gt;
+    &lt;GetStarted /&gt;
+    &lt;VideoButton url={videoUrl} /&gt;
+  &lt;/Stack&gt;
+&lt;/RevealSection&gt;</div>
+
+            <p><strong>Customize any animation:</strong></p>
+            <div class="code-block">&lt;RevealSection
+  delay={0.1}        // Animation delay in seconds
+  direction="up"     // up, down, left, right
+  distance={50}      // Distance in pixels
+&gt;
+  {/* Your content smoothly animates into view */}
+&lt;/RevealSection&gt;</div>
+
+            <p><strong>Pro tip:</strong> Use different delays to create a cascading effect that guides the user's eye through your content.</p>
+
+            <h2>📝 Complete Section Customization Guide</h2>
+            <p><strong>Every section is built for easy customization.</strong> Here's how to modify each component to match your brand and messaging:</p>
+
+            <h3>🎯 Hero Section</h3>
+            <p>Edit content in <span class="inline-code">src/components/sections/hero.tsx</span>:</p>
+            <div class="code-block">// Main content variables
+const headline = `Your Entire eCommerce`;
+const subHeadline = `Business in One Dashboard`;
+const trustedBy = `Trusted by +300K Creatives`;
+const videoUrl = 'https://www.youtube.com/watch?v=LXb3EKWsInQ';
+
+// Avatar array for social proof
+const avatars: Avatar[] = [
+  { alt: 'Customer Name', src: '/global/person-01.jpg' },
+  // Add more customer avatars...
+];</div>
+            <p><strong>Images to replace:</strong> <span class="inline-code">/light/hero.jpg</span>, <span class="inline-code">/dark/hero.jpg</span>, <span class="inline-code">/global/person-*.jpg</span></p>
+
+            <h3>🤝 Partners Section</h3>
+            <p>Edit content in <span class="inline-code">src/components/sections/partners.tsx</span>:</p>
+            <div class="code-block">const headline = `Trusted by leading brands`;
+const partners = [
+  '/global/partner-01.svg',
+  '/global/partner-02.svg',
+  // Add more partner logos...
+];</div>
+            <p><strong>Pro tip:</strong> Use SVG logos for crisp display at any size.</p>
+
+            <h3>🎛️ Features Grid</h3>
+            <p>Edit content in <span class="inline-code">src/components/sections/features-grid.tsx</span>:</p>
+            <div class="code-block">const features: Feature[] = [
+  {
+    headline: 'Smart Product Management',
+    description: 'Add, update, and categorize products effortlessly...',
+  },
+  // Add up to 3 features for optimal layout
+];</div>
+            <p><strong>Images to replace:</strong> <span class="inline-code">/light/features-grid-*.png</span>, <span class="inline-code">/dark/features-grid-*.png</span></p>
+
+            <h3>🎬 Video Section</h3>
+            <div class="code-block">const headline = `See Geneva in Action`;
+const subHeadline = `Why Choose Us?`;
+const description = `Watch how Geneva transforms your workflow...`;
+const videoUrl = 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID';</div>
+            <p><strong>Images to replace:</strong> <span class="inline-code">/global/video-poster.jpg</span></p>
+
+            <h3>🎠 Features Slider</h3>
+            <div class="code-block">const headline = `Features That Put You in Control`;
+const subHeadline = `Everything you need. \n Nothing you don't.`;
+const features = [
+  {
+    image: '/global/feature-slider-01.jpg',
+    title: 'Real-time Analytics',
+    description: 'Track your business performance in real-time...'
+  },
+  // Add 3-5 features for best user experience
+];</div>
+
+            <h3>🚀 Feature Large</h3>
+            <div class="code-block">const headline = `Run Your Store Like a Pro — Without Extra Staff`;
+const videoUrl = 'https://www.youtube.com/watch?v=LXb3EKWsInQ';
+const features: string[] = [
+  `Stay on top of finances with real-time dashboards.`,
+  `Track every product, SKU, and variation with ease.`,
+  `Understand your financial health in one glance.`,
+  `Automate the boring stuff.`,
+];</div>
+            <p><strong>Images to replace:</strong> <span class="inline-code">/light/feature-large.png</span>, <span class="inline-code">/dark/feature-large.png</span></p>
+
+            <h3>🪗 Features Accordion</h3>
+            <div class="code-block">const headline = `Integrations`;
+const subHeadline = `Geneva integrates smoothly to keep everything in sync...`;
+const duration = 5; // Auto-advance duration in seconds
+
+const features: Feature[] = [
+  {
+    imageDark: '/dark/screenshot-01.jpg',
+    imageLight: '/light/screenshot-01.jpg',
+    title: 'Shopify',
+    content: 'Seamless integration with your Shopify store...'
+  },
+  // Add 3-6 integrations
+];</div>
+
+            <h3>🔄 Process Section</h3>
+            <div class="code-block">const headline = `The Simple Process`;
+const items = [
+  {
+    number: '01',
+    title: 'Connect Your Store',
+    content: 'Link your existing platforms in under 60 seconds...'
+  },
+  // Add 3-4 process steps for clarity
+];</div>
+
+            <h3>⭐ Reviews Section</h3>
+            <div class="code-block">const headline = `Our Reviews`;
+const subHeadline = `What our customers \n are saying`;
+const reviews = [
+  {
+    stars: 5,
+    author: 'Sarah Johnson, CEO of TechStart',
+    content: 'Geneva transformed how we manage our entire business...'
+  },
+  // Add 3-6 reviews for social proof
+];</div>
+
+            <h3>📋 Features List</h3>
+            <div class="code-block">const headline = `What You Gain with Geneva`;
+const subHeadline = `Geneva helps your business \n scale with confidence.`;
+const features = [
+  {
+    title: 'Simplified Operations',
+    content: 'Stop bouncing between tools. Geneva brings...',
+    darkImage: '/dark/screenshot-01.jpg',
+    lightImage: '/light/screenshot-01.jpg',
+  },
+  // Add 3-4 key benefits
+];</div>
+
+            <h3>💬 Testimonials</h3>
+            <div class="code-block">const content = `Geneva has been a game-changer for our business...`;
+const name = `John Smith`;
+const job = `Founder & CEO`;</div>
+            <p><strong>Images to replace:</strong> <span class="inline-code">/global/testimonials-01.png</span></p>
+
+            <h3>📊 Stats Section</h3>
+            <div class="code-block">const headline = `Numbers That Matter`;
+const description = `See why thousands of businesses trust Geneva...`;
+
+const statsRow1 = [
+  { headline: '99.9%', description: 'Uptime guaranteed', color: true },
+  { headline: '300K+', description: 'Happy customers', color: false },
+];
+
+const statsRow2 = [
+  { headline: '$2.5M+', description: 'Revenue processed', color: false },
+  // Add up to 6 total stats
+];</div>
+
+            <h3>❓ FAQ Section</h3>
+            <div class="code-block">const headline = `FAQ`;
+const subHeadline = `Questions & Answers`;
+const items: Item[] = [
+  {
+    question: 'What is Geneva?',
+    answer: 'Geneva is a modern, responsive dashboard...'
+  },
+  // Add 5-8 frequently asked questions
+];</div>
+
+            <h3>📞 Contact Section</h3>
+            <div class="code-block">const headline = `Contact us`;</div>
+            <p><strong>Images to replace:</strong> <span class="inline-code">/global/contact.jpg</span><br>
+            <strong>Form setup:</strong> Contact form integrates with Resend for email delivery.</p>
+
+            <h3>ℹ️ About Section</h3>
+            <div class="code-block">const tagline = `About us`;
+const headline = `We control the world one line at a time.`;
+const description = `Your company story and mission statement...`;</div>
+            <p><strong>Images to replace:</strong> <span class="inline-code">/global/about.jpg</span></p>
+
+            <h3>🧭 Header Navigation</h3>
+            <div class="code-block">const logoText = `Geneva`;
+const navigationLinks = [
+  { label: 'Features', href: '#features-1' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '/contact' },
+];</div>
+            <p><strong>Logo images:</strong> <span class="inline-code">/light/logo-header.png</span>, <span class="inline-code">/dark/logo-header.png</span></p>
+
+            <h3>🦶 Footer</h3>
+            <div class="code-block">const headline = `Get Started Today`;
+const description = `Join thousands of businesses...`;
+const logoText = `Geneva`;
+const copyright = `© 2024 Geneva. All rights reserved.`;
+
+// Organize your links into logical groups
+const footerLinks1 = [
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const socialLinks = [
+  { 
+    href: 'https://twitter.com/yourhandle',
+    icon: IconBrandTwitter,
+    label: 'Twitter'
+  },
+  // Add your social platforms
+];</div>
+            <p><strong>Logo images:</strong> <span class="inline-code">/light/logo-footer.png</span>, <span class="inline-code">/dark/logo-footer.png</span></p>
+
+            <div class="section-divider"></div>
+
+            <h2>🎨 Image Organization</h2>
+            <p>Geneva uses a smart image organization system:</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>/public/light/</strong> - Images optimized for light theme
+                </div>
+                <div class="feature-item">
+                    <strong>/public/dark/</strong> - Images optimized for dark theme
+                </div>
+                <div class="feature-item">
+                    <strong>/public/global/</strong> - Theme-independent images
+                </div>
+            </div>
+            <p><strong>Pro tip:</strong> Keep your images optimized and use consistent aspect ratios within each section for the best visual experience.</p>
+            
+            <h2>🔧 Build and Deploy</h2>
+            
+            <h3>Building for Production</h3>
+            <div class="code-block">npm run build
+npm start</div>
+            
+            <h3>Deployment Options</h3>
+            <ul>
+                <li><strong>Vercel</strong> (recommended): Push to GitHub and connect to Vercel</li>
+                <li><strong>Netlify:</strong> Deploy via git integration</li>
+                <li><strong>Custom hosting:</strong> Build and upload the <span class="inline-code">out/</span> folder</li>
+            </ul>
+            
+            <h2>📁 Project Structure</h2>
+            <div class="code-block">geneva-mui/
+├── src/
+│   ├── app/                    # Next.js App Router pages
+│   │   ├── page.tsx           # Main landing page
+│   │   ├── layout.tsx         # Root layout
+│   │   ├── about/             # About page
+│   │   ├── contact/           # Contact page
+│   │   └── api/               # API routes
+│   ├── components/
+│   │   ├── sections/          # Page sections
+│   │   ├── buttons/           # Reusable buttons
+│   │   ├── forms/             # Form components
+│   │   └── ui/                # UI components
+│   ├── lib/                   # Utilities
+│   └── theme.ts               # MUI theme configuration
+├── public/                    # Static assets
+└── package.json</div>
+            
+            <h2>🎯 Predefined Customization Packages</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>🔧 Advanced Payment Integration</strong><br>
+                    Multi-currency Stripe setup, custom checkout flows, subscription management dashboard, promo codes and discount systems, tax calculation integration, trial period implementation
+                </div>
+                <div class="feature-item">
+                    <strong>📧 Email & CRM Integration</strong><br>
+                    Advanced Resend email templates, newsletter automation setup, CRM integration (HubSpot, Mailchimp, etc.)
+                </div>
+                <div class="feature-item">
+                    <strong>🚀 Performance & SEO Package</strong><br>
+                    Advanced SEO optimization, Google Analytics 4 integration, page speed optimization, schema markup implementation, sitemap and robots.txt setup, Core Web Vitals optimization
+                </div>
+                <div class="feature-item">
+                    <strong>🎯 Conversion Optimization</strong><br>
+                    A/B testing setup, heat mapping integration, conversion tracking implementation, user journey analysis tools, custom analytics implementation
+                </div>
+                <div class="feature-item">
+                    <strong>🌐 Multi-language Support</strong><br>
+                    Internationalization (i18n) setup, content translation management, multi-currency support, region-specific customizations
+                </div>
+            </div>
+            
+            <h2>🆘 Common Issues</h2>
+            
+            <h3>Stripe Integration</h3>
+            <ul>
+                <li>Ensure environment variables are properly set</li>
+                <li>Use test mode keys during development</li>
+                <li>Verify price IDs match your Stripe dashboard</li>
+            </ul>
+            
+            <h3>Email Functionality</h3>
+            <ul>
+                <li>Configure Resend API key for contact forms</li>
+                <li>Update email templates for your brand</li>
+            </ul>
+            
+            <h3>Styling Issues</h3>
+            <ul>
+                <li>Check Tailwind CSS configuration</li>
+                <li>Ensure MUI theme is properly applied</li>
+                <li>Verify responsive breakpoints</li>
+            </ul>
+            
+            <h2>📄 License</h2>
+            <p>This template is provided as-is for your SaaS projects. Customize and deploy as needed for your business.</p>
+            
+            <div class="contact-info">
+                <h3>📞 Support</h3>
+                <p>This template is designed and built by <strong>ThemeFellas</strong>.</p>
+                <p>For questions about customizing this template or custom development services:</p>
+                <p><strong>📧 hi@themefellas.com</strong></p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Ready to launch your SaaS?</strong></p>
+            <p>Start customizing your Geneva template today! 🚀</p>
+        </div>
+    </div>
+    
+    <script>
+        // Print functionality
+        function printPDF() {
+            window.print();
+        }
+        
+        // Add print button
+        window.addEventListener('load', function() {
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '🖨️ Print PDF';
+            printButton.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #4f46e5;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 600;
+                z-index: 1000;
+                box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            `;
+            printButton.onclick = printPDF;
+            document.body.appendChild(printButton);
+        });
+    </script>
+</body>
+</html>
